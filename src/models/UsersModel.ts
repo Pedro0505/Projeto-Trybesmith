@@ -8,6 +8,15 @@ const Create = async ({ classe, level, password, username }: IUser): Promise<voi
   await connection.execute<ResultSetHeader>(QUERRY, [classe, level, password, username]);
 };
 
-const lint = 'oi';
+const GetByUserName = async (username: string) => {
+  const QUERRY = 'SELECT * FROM Trybesmith.Users WHERE username = ?;';
+  const result = await connection.execute(QUERRY, [username]);
 
-export { Create, lint };
+  const [rows] = result;
+
+  const [user] = rows as IUser[];
+  
+  return user;
+};
+
+export { Create, GetByUserName };

@@ -5,7 +5,7 @@ interface IServiceReturnSuccess<U> {
 
 interface IServiceReturnError {
   code: number;
-  data: { message: string }
+  data: { error: string }
 }
 
 export { IServiceReturnSuccess, IServiceReturnError };

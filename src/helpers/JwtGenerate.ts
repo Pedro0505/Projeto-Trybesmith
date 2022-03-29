@@ -7,6 +7,6 @@ const jwtConfig: SignOptions = {
   algorithm: 'HS256',
 };
 
-const JWT_SECRET = process.env.JWT_SECRET || 'BatatinhaFrita123';
+const JWT_SECRET = 'BatatinhaFrita123';
 
 export default (playload: IPayloadJwt) => jwt.sign({ tokenData: playload }, JWT_SECRET, jwtConfig);
