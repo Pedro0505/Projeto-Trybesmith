@@ -1,2 +1,2 @@
 export { default as ProductValidate } from './ProductValidate';
-export const oi = '';
+export { default as UsersValidate } from './UsersValidate';
