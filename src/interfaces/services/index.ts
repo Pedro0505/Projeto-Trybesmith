@@ -1,11 +1,11 @@
-interface ServiceReturnSuccess<U> {
+interface IServiceReturnSuccess<U> {
   code: number;
   data: U,
 }
 
-interface ServiceReturnError {
+interface IServiceReturnError {
   code: number;
   data: { message: string }
 }
 
-export { ServiceReturnError, ServiceReturnSuccess };
+export { IServiceReturnSuccess, IServiceReturnError };

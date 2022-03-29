@@ -1,2 +1,2 @@
 export { default as GetAll } from './GetAll';
-export const lint = '';
+export { default as Create } from './Create';
