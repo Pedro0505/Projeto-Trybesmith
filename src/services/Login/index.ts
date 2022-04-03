@@ -6,7 +6,7 @@ import * as Model from '../../models/UsersModel';
 
 const Login = async ({ username, password }: ILogin) => {
   const user = await Model.GetByUserName(username);
-
+  
   const errorData: IServiceReturnError = { 
     code: 401, data: { error: 'Username or password invalid' },
   };
@@ -14,7 +14,7 @@ const Login = async ({ username, password }: ILogin) => {
   if (!user) return errorData;
   if (user.password !== password) return errorData;
 
-  const token = JwtGenerate({ username });
+  const token = JwtGenerate({ username, id: user.id as number });
 
   const serviceResponse: IServiceReturnSuccess<IToken> = {
     code: 200,

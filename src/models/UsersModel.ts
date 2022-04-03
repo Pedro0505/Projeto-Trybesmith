@@ -14,7 +14,7 @@ const GetByUserName = async (username: string) => {
 
   const [rows] = result;
 
-  const [user] = rows as IUser[];
+  const [user] = rows as Array<IUser | undefined>;
   
   return user;
 };

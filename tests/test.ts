@@ -53,7 +53,7 @@ afterAll(async () => {
 // Clean database before tests
 beforeAll(async () => { await recreateDatabase(); });
 
-describe.only("1 - Crie um endpoint para a listagem de produtos", () => {
+describe("1 - Crie um endpoint para a listagem de produtos", () => {
   beforeEach(async () => {
     await recreateDatabase();
   });
@@ -74,7 +74,7 @@ describe.only("1 - Crie um endpoint para a listagem de produtos", () => {
   });
 });
 
-describe.only("2 - Crie um endpoint para o cadastro de produtos", () => {
+describe("2 - Crie um endpoint para o cadastro de produtos", () => {
   beforeEach(async () => {
     await recreateDatabase();
   });
@@ -153,7 +153,7 @@ describe.only("2 - Crie um endpoint para o cadastro de produtos", () => {
   });
 });
 
-describe.only("3 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
+describe("3 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
   beforeEach(async () => {
     await recreateDatabase();
   });
@@ -299,7 +299,7 @@ describe.only("3 - Crie um endpoint para o cadastro de pessoas usuárias", () =>
   });
 });
 
-describe.only("4 - Crie um endpoint para listar todos os pedidos", () => {
+describe("4 - Crie um endpoint para listar todos os pedidos", () => {
 
   beforeEach(async () => {
     await recreateDatabase();
@@ -322,7 +322,7 @@ describe.only("4 - Crie um endpoint para listar todos os pedidos", () => {
   });
 });
 
-describe.only("5 - Crie um endpoint para o login de pessoas usuárias", () => {
+describe("5 - Crie um endpoint para o login de pessoas usuárias", () => {
   beforeAll(async () => {
     await recreateDatabase();
   });
@@ -375,7 +375,7 @@ describe.only("5 - Crie um endpoint para o login de pessoas usuárias", () => {
   });
 });
 
-describe("6 - Crie um endpoint para o cadastro de um pedido", () => {
+describe.only("6 - Crie um endpoint para o cadastro de um pedido", () => {
   let token: string;
 
   beforeEach(async () => {

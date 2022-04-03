@@ -1,4 +1,4 @@
-import { RowDataPacket } from 'mysql2';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
 import { IOrderModel } from '../interfaces/routes/Orders';
 import connection from './connection';
 
@@ -12,6 +12,14 @@ const GetAll = async (): Promise<IOrderModel[]> => {
   return result as IOrderModel[];
 };
 
-const lint = 'chato';
+const Create = async (userId: number, productId: number) => {
+  const QUERRY = 'INSERT INTO Trybesmith.Orders (userId) VALUES (?)';
 
-export { lint, GetAll };
+  const [result] = await connection.execute<ResultSetHeader>(QUERRY, [userId]);
+
+  const QUERRYUPDATE = 'UPDATE Trybesmith.Products SET orderId = ? WHERE id = ?';
+
+  await connection.execute<ResultSetHeader>(QUERRYUPDATE, [result.insertId, productId]);
+};
+
+export { Create, GetAll };
